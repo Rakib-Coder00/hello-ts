@@ -34,7 +34,7 @@
 
 // function render(document:any) {
 //     console.log(document);
-    
+
 // }
 
 //******  Array ==>
@@ -78,17 +78,30 @@
 
 
 //Object ==>
-let employee:{
-   readonly id:number,
-    name: string,
-    retire: (date:Date) => void
-} = {
-    id:1,
-    name: 'rakib',
-    retire: (date:Date)=>{
-        console.log(date)
-    }
-    }
+// let employee: {
+//     readonly id: number,
+//     name: string,
+//     retire: (date: Date) => void
+// } = {
+//     id: 1,
+//     name: 'rakib',
+//     retire: (date: Date) => {
+//         console.log(date)
+//     }
+// }
 
 // employee.id = 2
 
+type Employee = {
+    readonly id: number,
+    name: string,
+    retire: (date: Date) => void
+}
+
+let employee:Employee = {
+    id: 1,
+    name: 'rakib',
+    retire: (date: Date) => {
+        console.log(date)
+    }
+}
