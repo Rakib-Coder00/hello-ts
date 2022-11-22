@@ -125,16 +125,34 @@
 // Intersection Types =>
 // let weight: number & string
 
-type Draggable={
-    drag:()=> void
-}
-type Resizable={
-    resize:()=> void
-}
+// type Draggable={
+//     drag:()=> void
+// }
+// type Resizable={
+//     resize:()=> void
+// }
 
-type UiWidget = Draggable & Resizable
+// type UiWidget = Draggable & Resizable
 
-let textBox : UiWidget={
-    drag:()=>{},
-    resize:()=> {}
+// let textBox : UiWidget={
+//     drag:()=>{},
+//     resize:()=> {}
+// }
+
+
+//Literal types =>
+
+//Literal (exact, specific)
+// type Qty = 50 | 100
+// let qty:Qty =  100
+
+//Nullable Types =>
+
+function greet(name:string | null)  {
+    if (name) 
+        console.log(name.toUpperCase());
+    else
+    console.log('Hola!');
+    
 }
+greet(null)
