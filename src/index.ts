@@ -111,7 +111,7 @@
 
 //Union Types =>
 // function kgToLbs(weight:number | string):number {
-    //Narrowing
+//Narrowing
 //     if (typeof weight === 'number') 
 //         return weight * 2.2
 //     else
@@ -148,11 +148,34 @@
 
 //Nullable Types =>
 
-function greet(name:string | null)  {
-    if (name) 
-        console.log(name.toUpperCase());
-    else
-    console.log('Hola!');
-    
+// function greet(name:string | null | undefined)  {
+//     if (name) 
+//         console.log(name.toUpperCase());
+//     else
+//     console.log('Hola!');
+// }
+// greet(null)
+// greet(undefined)
+
+
+// Optional Chaining =>
+type Customer = {
+    birthDay?: Date
 }
-greet(null)
+
+function getCustomer(id: number): Customer | null | undefined {
+    return id === 0 ? null : { birthDay: new Date() }
+}
+
+let customer = getCustomer(10)
+// if (customer !== null && customer !== undefined)
+    // console.log(customer.birthDay);
+//Optional property access operator
+ console.log(customer?.birthDay?.getFullYear());
+
+//Optional element access operator=>
+// customer?.[0]
+
+//Optional Call
+// let log: any = null
+// log?.('a')
